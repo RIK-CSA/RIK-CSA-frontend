@@ -1,0 +1,38 @@
+---
+layout: base
+---
+
+{%comment%} 
+Setup job data
+{%endcomment%}
+
+{% assign jobs = site.data.jobs %} <!-- Load job data -->
+<h1>{{ page.title }}</h1>
+<br>
+
+{%comment%} 
+Load all job posts
+{%endcomment%}
+
+{% assign jobPosts = site.jobs %}
+
+{%comment%} 
+<!-- Iterate through Jobs -->
+{%endcomment%}
+
+<table>
+  <tr>
+    <th>Job Title</th>
+    <th>Description</th>
+    <th>Apply Now</th>
+  </tr>
+
+  {% for jobPost in jobPosts %}
+  <tr>
+    <td>{{ jobPost.title }}</td>
+    <td>{{ jobPost.description }}</td>
+    <td><a href="{{ site.baseurl }}{{ jobPost.apply_link }}">Apply Now</a></td>
+  </tr>
+  {% endfor %}
+
+</table>
