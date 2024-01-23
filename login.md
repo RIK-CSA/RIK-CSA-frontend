@@ -1,6 +1,5 @@
 ---
 title: Login
-layout: home
 search_exclude: true
 ---
 <!DOCTYPE html>
