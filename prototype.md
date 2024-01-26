@@ -52,6 +52,7 @@
                     rows: 100
                 })
             };
+
             // Send the AJAX request
             $.ajax(settings).done(function(response) {
                 console.log(response);
