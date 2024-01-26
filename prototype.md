@@ -34,7 +34,6 @@
     $(document).ready(function() {
         $('#jobSearchForm').submit(function(event) {
             event.preventDefault(); // Prevent the form from submitting normally
-
             // Construct the request settings
             const settings = {
                 async: true,
@@ -53,7 +52,6 @@
                     rows: 100
                 })
             };
-
             // Send the AJAX request
             $.ajax(settings).done(function(response) {
                 console.log(response);
@@ -68,10 +66,8 @@
     <form id="jobSearchForm" action="search-results.html" method="GET">
         <label for="jobTitle">Job Title:</label>
         <input type="text" id="jobTitle" name="jobTitle" placeholder="Enter job title">
-
         <label for="location">Location:</label>
         <input type="text" id="location" name="location" placeholder="Enter location">
-
         <input type="submit" value="Search">
     </form>
 </body>
