@@ -1,0 +1,87 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header class="nav_header">
+        <a href="{{ site.baseurl }}/">
+            <img class="logo" src="{{ site.baseurl }}/images/logo.png" alt="logo" width="75">
+        </a>
+        <nav>
+            <ul class="nav_links">
+                <li class="nav_list"><a class="nav_a" href="{{ site.baseurl }}/">Home</a></li>
+                <li class="nav_list"><a class="nav_a" href="{{ site.baseurl }}/ArtGallery">Gallery</a></li>
+                <li class="nav_list"><a class="nav_a" href="{{ site.baseurl }}/PersonalizedSkills/">Personalized Skills</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background-color: #FFD700; /* Updated to a yellowish color */
+    }
+
+    .nav_list, .nav_a, button {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        color: #333; /* Updated text color for better contrast */
+        text-decoration: none;
+    }
+
+    .nav_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 10%;
+        background-color: #FFD700; /* Updated to a yellowish color */
+        margin-bottom: 3ch;
+    }
+
+    .logo {
+        cursor: pointer;
+        background-color: #FFD700; /* Updated to a yellowish color */
+    }
+
+    .nav_links {
+        list-style: none;
+        background-color: #FFD700; /* Updated to a yellowish color */
+    }
+
+    .nav_links .nav_list {
+        display: inline-block;
+        padding: 5px 20px;
+        background-color: #FFD700; /* Updated to a yellowish color */
+    }
+
+    .nav_links .nav_list .nav_a {
+        transition: all 0.3s ease 0s;
+        background-color: #FFD700; /* Updated to a yellowish color */
+    }
+
+    .nav_links .nav_list .nav_a:hover {
+        color: #333; /* Updated text color for better contrast */
+    }
+
+    .nav_button {
+        padding: 9px 25px;
+        background-color: #FFD700; /* Updated to a yellowish color */
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+   }
+
+   .nav_button:hover {
+        background-color: #FFD700; /* Updated to a yellowish color */
+   }
+</style>
