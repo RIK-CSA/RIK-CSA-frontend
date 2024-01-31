@@ -1,6 +1,6 @@
 ---
 title: Interview
-layout: base
+layout: none
 search_exclude: true
 ---
 
