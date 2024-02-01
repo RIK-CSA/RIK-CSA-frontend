@@ -72,7 +72,7 @@ search_exclude: true
         color: #388087;
         font-size: 75px;
         background-color: #F6F6F2;
-        margin-top: 150px;
+        margin-top: 50px;
         animation: bounceIn 0.5s ease-out; /* Added animation for bouncing in */
     }
 

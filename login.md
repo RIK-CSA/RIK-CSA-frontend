@@ -1,6 +1,7 @@
 ---
 title: Login
-search_exclude: true
+layout: none
+permalink: /login/
 ---
 {%- include rik_head.html -%}
 
@@ -16,7 +17,6 @@ search_exclude: true
             text-align: center;
             margin: 50px;
         }
-
         .login-container {
             max-width: 300px;
             margin: auto;
@@ -74,7 +74,7 @@ search_exclude: true
         'Content-Type': 'application/json',
       },
     };
-    fetch("http://localhost:8085/api/person/", options)
+    fetch("http://localhost:8020/api/person/", options)
       .then(response => {
         if (response.status !== 200) {
             const errorMsg = 'Database response error: ' + response.status;
@@ -143,7 +143,7 @@ search_exclude: true
     };
 
     // STEP TWO: SEND REQUEST TO BACKEND AND GET JWT COOKIE
-    fetch("http://localhost:8085/authenticate", requestOptions)
+    fetch("http://localhost:8020/authenticate", requestOptions)
     .then(response => {
         if (!response.ok) {
             const errorMsg = 'Login error: ' + response.status;
@@ -182,7 +182,7 @@ function fetchUserData() {
       credentials: 'include',
     };
 
-    fetch("http://localhost:8085/api/person/jwt", requestOptions)
+    fetch("http://localhost:8020/api/person/jwt", requestOptions)
       .then(response => {
               if (!response.ok) {
                   const errorMsg = 'Login error: ' + response.status;
@@ -222,6 +222,63 @@ function fetchUserData() {
         `;
         console.log(data);
       })
-      .catch(error => console.log('error', error));
+      .catch(error => {console.log('error', error)});
+}
+function login_user() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    // STEP ONE: COLLECT USER INPUT
+    var raw = JSON.stringify({
+        "email": document.getElementById("signInEmailInput").value,
+        "password": document.getElementById("signInPasswordInput").value
+
+        // For quick testing
+        //"email": "toby@gmail.com",
+        //"password": "123Toby!"
+    });
+    console.log(raw);
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        credentials: 'include',
+        body: raw,
+        redirect: 'follow'
+    };
+
+    // STEP TWO: SEND REQUEST TO BACKEND AND GET JWT COOKIE
+    fetch("http://localhost:8020/authenticate", requestOptions)
+    .then(response => {
+        if (!response.ok) {
+            const errorMsg = 'Login error: ' + response.status;
+            console.log(errorMsg);
+
+            switch (response.status) {
+                case 401:
+                    alert("Incorrect username or password");
+                    break;
+                case 403:
+                    alert("Access forbidden. You do not have permission to access this resource.");
+                    break;
+                case 404:
+                    alert("User not found. Please check your credentials.");
+                    break;
+                // Add more cases for other status codes as needed
+                default:
+                    alert("Login failed. Please try again later.");
+            }
+
+            return Promise.reject('Login failed');
+        }
+        return response.text()
+    })
+    .then(result => {
+        console.log(result);
+        window.location.href = "http://127.0.0.1:4100/Login-Lesson/account";
+    })
+    .catch(error => {console.error('Error during login:', error);
+    alert('There is currently an error going on. Please wait until we fix it');});
+
 }
 </script>

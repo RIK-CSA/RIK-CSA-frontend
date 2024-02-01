@@ -13,7 +13,10 @@ permalink: /PersonalizedSkills/
     <h1 style="text-align: center;">Do Three Steps AND Find Your Best Jobs! 😉</h1>
 </head>
 <body>
-
+<audio controls autoplay loop hidden>
+    <source src="/audio/good_enough.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
 <form id="search-form">
     <label for="languages">Select the programming languages you know:</label><br>
     <input type="checkbox" name="languages" value="python"> Python
@@ -63,6 +66,7 @@ permalink: /PersonalizedSkills/
         try {
             const response = await fetch(url, options);
             const data = await response.json();
+            const resultContainer = document.getElementById('result-container');
 
             if (Array.isArray(data)) {
                 const jobs = data.map(job => ({
@@ -71,7 +75,6 @@ permalink: /PersonalizedSkills/
                     location: job.job_location
                 }));
 
-                const resultContainer = document.getElementById('result-container');
                 resultContainer.innerHTML = ''; // Clear previous results
 
                 jobs.forEach(job => {
@@ -98,7 +101,6 @@ permalink: /PersonalizedSkills/
         background-color: #FFFF00; /* Light blue background color */
         color: #333;
     }
-
     form {
         max-width: 600px;
         margin: 50px auto;
