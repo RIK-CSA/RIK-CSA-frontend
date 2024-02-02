@@ -35,6 +35,6 @@ search_exclude: true
     </div>
   </div>
 </div>
-<script src="/js/index.js"></script>
+<script src="/assets/js/interview_home.js"></script>
 </body>
 </html>
