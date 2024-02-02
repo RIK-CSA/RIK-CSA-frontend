@@ -19,7 +19,7 @@ search_exclude: true
             <img src="{{ site.baseurl }}/images/job.png" width=250px/>
         </p>
         <h1 class="animated-title">Welcome to Jinder</h1>
-        <p>Discover Your Dream Job</p>
+        <h2>Discover Your Dream Job</h2>
     </header>
 
     <section id="search-section">

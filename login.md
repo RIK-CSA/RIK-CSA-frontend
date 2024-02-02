@@ -6,64 +6,113 @@ permalink: /login/
 {%- include rik_head.html -%}
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login System</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            margin: 50px;
+        h3{
+            background-color: #fff;
         }
-        .login-container {
-            max-width: 300px;
-            margin: auto;
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFF00; /* Light blue background color */
+            color: #333;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 50px auto;
             padding: 20px;
             background-color: #fff;
-            border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-
-        .login-container label {
+        label {
             display: block;
             margin-bottom: 8px;
+            background-color: #fff;
         }
-
-        .login-container input {
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        input[type="text"],
+        input[type="password"],
+        select {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
+            padding: 10px;
+            margin: 8px 0;
             box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            border-color: #4caf50;
+        }
+        /*Email Stuff*/
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            border-color: #4caf50;
+        }
+        button {
+            background-color: #60e085;
+            color: #fff;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
 
-        .login-container button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
+        button:hover {
+            background-color: #4cb571;
+        }
+
+        #result-container {
+            margin-top: 20px;
+        }
+
+        #result-container div {
+            margin-bottom: 20px;
         }
     </style>
 </head>
-<div class="CONTAINER">
-    <div class="CARD">
+
+<body>
+    <form id="login-form">
         <h3>Login</h3>
-        <input id="signInEmailInput" class="input" placeholder="Email">
-        <input id="signInPasswordInput" class="input" placeholder="Password">
+        <label for="signInEmailInput">Email</label>
+        <input id="signInEmailInput" class="input" placeholder="Email" type="email">
+        <label for="signInPasswordInput">Password</label>
+        <input id="signInPasswordInput" class="input" placeholder="Password" type="password">
         <button class="signInButton" onclick="login_user()">Login</button>
-    </div>
-</div>
-</html>
-
-<script>
+    </form>
+    <!-- Your existing HTML content goes here -->
+    <div id="result"></div>
+    <div id="userData"></div>
+    <script>
     function userDbRequest() {
-
     // prepare HTML result container for new output
     const resultContainer = document.getElementById("result");
-
     // set options for cross origin header request
     const options = {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -118,22 +167,18 @@ permalink: /login/
       resultContainer.appendChild(tr);
     });
   }
-  
   function login_user() {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-
     // STEP ONE: COLLECT USER INPUT
     var raw = JSON.stringify({
         "email": document.getElementById("signInEmailInput").value,
         "password": document.getElementById("signInPasswordInput").value
-
         // For quick testing
         //"email": "toby@gmail.com",
         //"password": "123Toby!"
     });
     console.log(raw);
-
     var requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -141,14 +186,12 @@ permalink: /login/
         body: raw,
         redirect: 'follow'
     };
-
     // STEP TWO: SEND REQUEST TO BACKEND AND GET JWT COOKIE
     fetch("http://localhost:8020/authenticate", requestOptions)
     .then(response => {
         if (!response.ok) {
             const errorMsg = 'Login error: ' + response.status;
             console.log(errorMsg);
-
             switch (response.status) {
                 case 401:
                     alert("Incorrect username or password");
@@ -163,7 +206,6 @@ permalink: /login/
                 default:
                     alert("Login failed. Please try again later.");
             }
-
             return Promise.reject('Login failed');
         }
         return response.text()
@@ -181,13 +223,11 @@ function fetchUserData() {
       cache: 'default',
       credentials: 'include',
     };
-
     fetch("http://localhost:8020/api/person/jwt", requestOptions)
       .then(response => {
               if (!response.ok) {
                   const errorMsg = 'Login error: ' + response.status;
                   console.log(errorMsg);
-
                   switch (response.status) {
                       case 401:
                           alert("Please log into or make an account");
@@ -203,7 +243,6 @@ function fetchUserData() {
                       default:
                           alert("Login failed. Please try again later.");
                   }
-
                   return Promise.reject('Login failed');
               }
               return response.json();
@@ -227,18 +266,15 @@ function fetchUserData() {
 function login_user() {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-
     // STEP ONE: COLLECT USER INPUT
     var raw = JSON.stringify({
         "email": document.getElementById("signInEmailInput").value,
-        "password": document.getElementById("signInPasswordInput").value
-
+        "password": document.getElementById("signInPasswordInput").value,
         // For quick testing
-        //"email": "toby@gmail.com",
-        //"password": "123Toby!"
+        "test_email": "toby@gmail.com",
+        "test_password": "123Toby!"
     });
     console.log(raw);
-
     var requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -246,14 +282,12 @@ function login_user() {
         body: raw,
         redirect: 'follow'
     };
-
     // STEP TWO: SEND REQUEST TO BACKEND AND GET JWT COOKIE
     fetch("http://localhost:8020/authenticate", requestOptions)
     .then(response => {
         if (!response.ok) {
             const errorMsg = 'Login error: ' + response.status;
             console.log(errorMsg);
-
             switch (response.status) {
                 case 401:
                     alert("Incorrect username or password");
@@ -268,7 +302,6 @@ function login_user() {
                 default:
                     alert("Login failed. Please try again later.");
             }
-
             return Promise.reject('Login failed');
         }
         return response.text()
@@ -279,6 +312,8 @@ function login_user() {
     })
     .catch(error => {console.error('Error during login:', error);
     alert('There is currently an error going on. Please wait until we fix it');});
-
 }
 </script>
+</body>
+
+</html>
