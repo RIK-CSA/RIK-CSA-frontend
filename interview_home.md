@@ -1,6 +1,8 @@
 ---
 title: Interview
 search_exclude: true
+permalink: /Interview/
+layout: none
 ---
 
 {%- include rik_head.html -%}
@@ -38,3 +40,123 @@ search_exclude: true
 <script src="/assets/js/interview_home.js"></script>
 </body>
 </html>
+
+  <style>
+    /* Resetting default styles */
+    body {
+        font-family: 'Georgia', serif;
+        margin: 0;
+        padding: 0;
+        background-color: #FFFF00; /* Light blue background color */
+        color: #333;
+    }
+
+    /* Container styles */
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Main container styles */
+    .main {
+        max-width: 600px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    /* Image container styles */
+    .image-container {
+        margin-right: 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    /* New meeting styles */
+    .new-meeting {
+        margin-bottom: 20px;
+    }
+
+    #newMeetingBtn {
+        background-color: #60e085;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    #newMeetingBtn:hover {
+        background-color: #4cb571;
+    }
+
+    .join-meeting {
+        margin-top: 20px;
+    }
+
+    /* Join meeting styles */
+    #meetingName {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        transition: border-color 0.3s ease;
+    }
+
+    #meetingName:focus {
+        border-color: #4caf50;
+    }
+
+    #joinMeetingBtn {
+        background-color: #60e085;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    #joinMeetingBtn:hover {
+        background-color: #4cb571;
+    }
+
+    /* Connected users styles */
+    .connected-users {
+        margin-top: 20px;
+    }
+
+    #logoutBtn {
+        background-color: #60e085;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    #logoutBtn:hover {
+        background-color: #4cb571;
+    }
+
+    h2 {
+        margin-top: 20px;
+    }
+
+    #userList {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+  </style>
