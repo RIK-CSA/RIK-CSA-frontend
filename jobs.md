@@ -93,7 +93,9 @@ permalink: /PersonalizedSkills/
 
 </body>
 </html>
+
 <style>
+    /* Resetting default styles */
     body {
         font-family: 'Georgia', serif;
         margin: 0;
@@ -101,6 +103,8 @@ permalink: /PersonalizedSkills/
         background-color: #FFFF00; /* Light blue background color */
         color: #333;
     }
+
+    /* Form styles */
     form {
         max-width: 600px;
         margin: 50px auto;
@@ -110,15 +114,19 @@ permalink: /PersonalizedSkills/
         border-radius: 10px;
     }
 
+    /* Label styles */
     label {
         display: block;
         margin-bottom: 8px;
+        background-color: #fff;
     }
 
+    /* Checkbox styles */
     input[type="checkbox"] {
         margin-right: 5px;
     }
 
+    /* Input and select styles */
     input[type="text"],
     select {
         width: 100%;
@@ -127,6 +135,7 @@ permalink: /PersonalizedSkills/
         box-sizing: border-box;
     }
 
+    /* Button styles */
     button {
         background-color: #60e085;
         color: #fff;
@@ -137,14 +146,17 @@ permalink: /PersonalizedSkills/
         font-size: 16px;
     }
 
+    /* Button hover styles */
     button:hover {
         background-color: #4cb571;
     }
 
+    /* Result container styles */
     #result-container {
         margin-top: 20px;
     }
 
+    /* Result container div styles */
     #result-container div {
         margin-bottom: 20px;
     }
