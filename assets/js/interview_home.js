@@ -3,7 +3,7 @@ function loadAndDisplayUsers() {
     // check if the user is connected
     const connectedUser = localStorage.getItem('connectedUser');
     if (!connectedUser) {
-        window.location = 'login.html';
+        window.location = 'login.md';
         return;
     }
 
