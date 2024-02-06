@@ -5,22 +5,73 @@ search_exclude: true
 permalink: /FindEmployees/
 ---
 {%- include rik_head.html -%}
-
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worker Hiring System</title>
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1, h2 {
+            background-color: #fff;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            background-color: #fff;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
-
     <h1>Worker Hiring System</h1>
-
     <!-- Add Worker Form -->
-    <h2>Add Worker</h2>
     <form id="addWorkerForm">
+        <h2>Add Worker</h2>
         <label for="workerName">Name:</label>
         <input type="text" id="workerName" required>
         <br>
@@ -36,9 +87,9 @@ permalink: /FindEmployees/
         <button type="button" onclick="addWorker()">Add Worker</button>
     </form>
 
-      <!-- Find Most Relevant Worker Form -->
-    <h2>Find Most Relevant Worker</h2>
+    <!-- Find Most Relevant Worker Form -->
     <form id="findMostRelevantForm">
+        <h2>Find Most Relevant Worker</h2>
         <label for="newLanguagesKnown">Languages Known (comma-separated):</label>
         <input type="text" id="newLanguagesKnown" required>
         <br>
