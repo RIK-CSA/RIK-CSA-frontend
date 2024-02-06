@@ -1,7 +1,7 @@
 ---
-title: Interview
+title: Video call
 search_exclude: true
-permalink: /Interview/
+permalink: /videocall/
 layout: none
 ---
 
@@ -37,8 +37,7 @@ window.onload = function () {
         // @param 5: Username
     const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 10000) + "");
     const userID = Math.floor(Math.random() * 10000) + "";
-    const userName = "userName" + userID;
-    const appID = 109479364;
+    const userName = getUrlParams(window.location.href)['username'] || "userName" + userID;    const appID = 109479364;
     const serverSecret = "0576fc29a97e7f40be464a487a82ef32";
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);  
         const zp = ZegoUIKitPrebuilt.create(kitToken);
