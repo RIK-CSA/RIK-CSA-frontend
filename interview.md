@@ -30,10 +30,10 @@ window.onload = function () {
         // @param 5: Username
     const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 10000) + "");
     const userID = Math.floor(Math.random() * 10000) + "";
-    const userName = getUrlParams(window.location.href)['username'] || "userName" + userID;
-    const appID = 'GENERATE_YOURS'; // get this later
-    const serverSecret = "GENERATE_YOURS"; // get this later
-    const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
+    const userName = "userName" + userID;
+    const appID = 109479364;
+    const serverSecret = "0576fc29a97e7f40be464a487a82ef32";
+    const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);  
         const zp = ZegoUIKitPrebuilt.create(kitToken);
         zp.joinRoom({
             container: document.querySelector("#root"),
@@ -43,7 +43,7 @@ window.onload = function () {
             }],
             scenario: {
                 mode: ZegoUIKitPrebuilt.VideoConference,
-            },               
+            },              
            	turnOnMicrophoneWhenJoining: false,
            	turnOnCameraWhenJoining: false,
            	showMyCameraToggleButton: true,
