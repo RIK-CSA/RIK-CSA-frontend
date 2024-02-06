@@ -57,6 +57,10 @@
                 { title: 'Backend Developer', skills: ['python', 'java', 'node.js'] },
                 { title: 'Full Stack Developer', skills: ['javascript', 'html/css', 'node.js', 'react'] },
                 { title: 'Data Scientist', skills: ['python', 'r', 'machine learning'] },
+                // Add more job listings here...
+                { title: 'UI/UX Designer', skills: ['ui/ux design', 'photoshop', 'sketch'] },
+                { title: 'Digital Marketing Specialist', skills: ['digital marketing', 'seo', 'social media'] },
+                { title: 'Project Manager', skills: ['project management', 'communication', 'leadership'] }
             ];
             // Calculate similarity between user's skills and job listings using simple matching
             const recommendations = [];
