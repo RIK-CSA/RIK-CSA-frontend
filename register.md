@@ -25,7 +25,7 @@ permalink: /register/
       <input type="password" id="password" required>
       <button type="submit">Register</button>
     </form>
-    <p>Already have an account? <a href="login.html">Login</a></p>
+    <p>Already have an account? <a href="login">Login</a></p>
   </div>
 </div>
 

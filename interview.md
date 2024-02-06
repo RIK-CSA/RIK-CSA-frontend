@@ -1,3 +1,10 @@
+---
+title: Interview
+search_exclude: true
+permalink: /Interview/
+layout: none
+---
+
 <html>
 
 <head>
