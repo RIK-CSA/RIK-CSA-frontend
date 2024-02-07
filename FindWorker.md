@@ -115,7 +115,7 @@ permalink: /FindEmployees/
                 preferredLocation: $('#newPreferredLocation').val()
             };
 
-            fetch('http://localhost:8020/api/worker/findMostRelevant?k=1', {
+            fetch('http://localhost:8020/api/worker/findMostRelevant?k=3', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
