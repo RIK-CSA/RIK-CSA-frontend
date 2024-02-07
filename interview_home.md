@@ -42,7 +42,7 @@ layout: none
     // check if the user is connected
     const connectedUser = localStorage.getItem('connectedUser');
     if (!connectedUser) {
-        window.location = '/login';
+        window.location = '/login/';
         return;
     }
     const userListElement = document.getElementById("userList");
