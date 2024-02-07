@@ -42,7 +42,7 @@ layout: none
     // check if the user is connected
     const connectedUser = localStorage.getItem('connectedUser');
     if (!connectedUser) {
-        window.location = '/login/';
+        window.location = '/RIK-CSA-frontend/login/';
         return;
     }
     const userListElement = document.getElementById("userList");
@@ -88,7 +88,7 @@ layout: none
           })
           .then((data) => {
               localStorage.removeItem('connectedUser');
-              window.location.href = "/login";
+              window.location.href = "/RIK-CSA-frontend/login/";
           });
   }
   const logoutBtn = document.getElementById("logoutBtn");
