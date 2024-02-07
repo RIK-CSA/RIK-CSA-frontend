@@ -42,7 +42,7 @@ layout: none
     // check if the user is connected
     const connectedUser = localStorage.getItem('connectedUser');
     if (!connectedUser) {
-        window.location = 'login';
+        window.location = '/login';
         return;
     }
     const userListElement = document.getElementById("userList");
@@ -88,14 +88,14 @@ layout: none
           })
           .then((data) => {
               localStorage.removeItem('connectedUser');
-              window.location.href = "login.html";
+              window.location.href = "/login";
           });
   }
   const logoutBtn = document.getElementById("logoutBtn");
   logoutBtn.addEventListener("click", handleLogout);
   function handleNewMeeting() {
       const connectedUser = JSON.parse(localStorage.getItem('connectedUser'));
-      window.open(`videocall?username=${connectedUser.username}`, "_blank");
+      window.open(`/videocall?username=${connectedUser.username}`, "_blank");
   }
   // Attach the handleNewMeeting function to the "Create a New Meeting" button
   const newMeetingBtn = document.getElementById("newMeetingBtn");
@@ -103,7 +103,7 @@ layout: none
   function handleJoinMeeting() {
       const roomId = document.getElementById("meetingName").value;
       const connectedUser = JSON.parse(localStorage.getItem('connectedUser'));
-      const url = `videocall?roomID=${roomId}&username=${connectedUser.username}`;
+      const url = `/videocall?roomID=${roomId}&username=${connectedUser.username}`;
       window.open(url, "_blank");
   }
   const joinMeetingBtn = document.getElementById("joinMeetingBtn");

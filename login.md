@@ -141,7 +141,7 @@ permalink: /login/
             return response.json();
         }).then((response) => {
             localStorage.setItem('connectedUser', JSON.stringify(response));
-            window.location.href = 'index.html'
+            window.location.href = 'interview_home'
         }).catch(error => {
             console.error('POST request error', error);
         });
