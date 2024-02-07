@@ -115,7 +115,7 @@ permalink: /login/
       <input type="password" id="password" required>
       <button type="submit">Login</button>
     </form>
-    <p>Don't have an account? <a href="register.html">Register</a></p>
+    <p>Don't have an account? <a href="register">Register</a></p>
   </div>
 </div>
 <script>
