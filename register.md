@@ -3,7 +3,7 @@ title: Register
 layout: none
 permalink: /login/register/
 ---
-
+{%- include rik_head.html -%}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,6 +11,87 @@ permalink: /login/register/
   <title>Register User</title>
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        h3{
+            background-color: #fff;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFF00; /* Light blue background color */
+            color: #333;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            background-color: #fff;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            border-color: #4caf50;
+        }
+        /*Email Stuff*/
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            border-color: #4caf50;
+        }
+        button {
+            background-color: #60e085;
+            color: #fff;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #4cb571;
+        }
+        #result-container {
+            margin-top: 20px;
+        }
+        #result-container div {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
