@@ -19,13 +19,12 @@ permalink: /PersonalizedSkills/
 </audio>
 <form id="search-form">
     <label for="languages">Select the programming languages you know:</label><br>
-    <input type="checkbox" name="languages" value="python"> Python
-    <input type="checkbox" name="languages" value="java"> Java
-    <input type="checkbox" name="languages" value="cpp"> C++
-    <input type="checkbox" name="languages" value="javascript"> JavaScript
-    <input type="checkbox" name="languages" value="matlab"> Matlab
-    <input type="checkbox" name="languages" value="other"> Other
-    <br><br>
+    <input type="checkbox" name="languages" value="python"> Python<br>
+    <input type="checkbox" name="languages" value="java"> Java<br>
+    <input type="checkbox" name="languages" value="cpp"> C++<br>
+    <input type="checkbox" name="languages" value="javascript"> JavaScript<br>
+    <input type="checkbox" name="languages" value="matlab"> Matlab<br>
+    <input type="checkbox" name="languages" value="other"> Other<br><br>
     <label for="location">Enter your preferred job location:</label><br>
     <input type="text" id="location" name="location" placeholder="e.g., Chicago, IL">
     <br><br>

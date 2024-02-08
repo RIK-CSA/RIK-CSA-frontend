@@ -1,25 +1,57 @@
+---
+title: Job Recommendations
+search_exclude: true
+permalink: /recommend/
+layout: none
+---
+
+{%- include rik_head.html -%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Recommendations</title>
-    <style>
+ <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
+            color: #3498db;
+            background-color: #fff;
+
+        }
+
+        label {
+            background-color: #fff;
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
             color: #333;
         }
+
         input[type="text"] {
+            background-color: #fff;
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
+            margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 14px;
         }
+
         button {
             background-color: #3498db;
             color: #fff;
@@ -27,13 +59,29 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
         }
+
         button:hover {
             background-color: #2980b9;
         }
+
         #jobListings {
+            background-color: #fff;
             margin-top: 20px;
             text-align: left;
+        }
+
+        h2 {
+            background-color: #fff;
+            color: #3498db;
+            margin-top: 20px;
+        }
+
+        p {
+            background-color: #fff;
+            font-size: 14px;
+            margin: 8px 0;
         }
     </style>
 </head>
