@@ -1,7 +1,7 @@
 ---
 title: Video call
 search_exclude: true
-permalink: /videocall/
+permalink: /interview/videocall/
 layout: none
 ---
 

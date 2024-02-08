@@ -15,7 +15,6 @@ layout: none
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <base href="/RIK-CSA-frontend/">
 </head>
 <body>
 <div class="container">
@@ -43,7 +42,7 @@ layout: none
     // check if the user is connected
     const connectedUser = localStorage.getItem('connectedUser');
     if (!connectedUser) {
-        window.location = '/RIK-CSA-frontend/login/';
+        window.location = 'login/';
         return;
     }
     const userListElement = document.getElementById("userList");
@@ -96,7 +95,7 @@ layout: none
   logoutBtn.addEventListener("click", handleLogout);
   function handleNewMeeting() {
       const connectedUser = JSON.parse(localStorage.getItem('connectedUser'));
-      window.open(`/videocall?username=${connectedUser.username}`, "_blank");
+      window.open(`videocall?username=${connectedUser.username}`, "_blank");
   }
   // Attach the handleNewMeeting function to the "Create a New Meeting" button
   const newMeetingBtn = document.getElementById("newMeetingBtn");
@@ -104,7 +103,7 @@ layout: none
   function handleJoinMeeting() {
       const roomId = document.getElementById("meetingName").value;
       const connectedUser = JSON.parse(localStorage.getItem('connectedUser'));
-      const url = `/videocall?roomID=${roomId}&username=${connectedUser.username}`;
+      const url = `videocall?roomID=${roomId}&username=${connectedUser.username}`;
       window.open(url, "_blank");
   }
   const joinMeetingBtn = document.getElementById("joinMeetingBtn");

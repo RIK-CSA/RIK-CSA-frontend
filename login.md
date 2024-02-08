@@ -1,7 +1,7 @@
 ---
 title: Login
 layout: none
-permalink: /login/
+permalink: /interview/login/
 ---
 {%- include rik_head.html -%}
 
