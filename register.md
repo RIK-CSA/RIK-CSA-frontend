@@ -106,7 +106,7 @@ permalink: /login/register/
       <input type="password" id="password" required>
       <button type="submit">Register</button>
     </form>
-    <p>Already have an account? <a url="https://rik-csa.github.io/RIK-CSA-frontend/login">Login</a></p>
+    <p>Already have an account? <a href="https://rik-csa.github.io/RIK-CSA-frontend/login">Login</a></p>
   </div>
 </div>
 
