@@ -107,7 +107,42 @@ permalink: /FindEmployees/
 
     <script>
         // Function to add a new worker (same as before)
+        function addWorker() {
+        // Gather data from the form
+        const workerData = {
+            name: $('#workerName').val(),
+            languagesKnown: $('#languagesKnown').val().split(',').map(lang => lang.trim()),
+            preferredLocation: $('#preferredLocation').val(),
+            internshipPreferred: $('#internshipPreferred').is(':checked')
+        };
 
+        // Make a POST request to the backend API endpoint
+        fetch('http://localhost:8020/api/worker/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(workerData),
+        })
+        .then(response => {
+            if (response.ok) {
+                // If the request is successful, clear the form fields
+                $('#workerName').val('');
+                $('#languagesKnown').val('');
+                $('#preferredLocation').val('');
+                $('#internshipPreferred').prop('checked', false);
+                // Display a success message or perform any other actions as needed
+                alert('Worker added successfully');
+            } else {
+                // If there is an error, display an error message
+                alert('Error adding worker. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error adding worker. Please try again.');
+        });
+    }
         // Function to find the most relevant worker
         function findMostRelevantWorker() {
             const newWorkerData = {
