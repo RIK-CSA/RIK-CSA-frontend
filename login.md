@@ -82,15 +82,12 @@ permalink: /login/
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
-
         button:hover {
             background-color: #4cb571;
         }
-
         #result-container {
             margin-top: 20px;
         }
-
         #result-container div {
             margin-bottom: 20px;
         }
