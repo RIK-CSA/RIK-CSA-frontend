@@ -1,7 +1,7 @@
 ---
 title: Interview
 search_exclude: true
-permalink: /Interview/
+permalink: /interview/
 layout: none
 ---
 
