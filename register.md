@@ -1,7 +1,7 @@
 ---
 title: Register
 layout: none
-permalink: /login/register/
+permalink: /interview/login/register/
 ---
 {%- include rik_head.html -%}
 <html lang="en">
