@@ -1,7 +1,7 @@
 ---
 title: Register
 layout: none
-permalink: /register/
+permalink: /login/register/
 ---
 
 <html lang="en">
