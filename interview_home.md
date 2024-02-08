@@ -43,7 +43,7 @@ layout: none
     // check if the user is connected
     const connectedUser = localStorage.getItem('connectedUser');
     if (!connectedUser) {
-        window.location = '/login/';
+        window.location = '/RIK-CSA-frontend/login/';
         return;
     }
     const userListElement = document.getElementById("userList");
