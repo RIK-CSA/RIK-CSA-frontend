@@ -1,3 +1,11 @@
+---
+title: Job Recommendations
+search_exclude: true
+permalink: /recommend/
+layout: none
+---
+
+{%- include rik_head.html -%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
