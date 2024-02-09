@@ -140,7 +140,7 @@ permalink: /interview/login/register/
             return response;
         }).then(() => {
             localStorage.setItem("connectedUser", JSON.stringify(user));
-            window.location.href = "index.html";
+            window.location.href = "https://rik-csa.github.io/RIK-CSA-frontend/";
         }).catch(error => {
             console.error('POST request error:', error);
         });
