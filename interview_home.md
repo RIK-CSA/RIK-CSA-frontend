@@ -88,7 +88,7 @@ layout: none
           })
           .then((data) => {
               localStorage.removeItem('connectedUser');
-              window.location.href = "/login/";
+              window.location.href = "login/";
           });
   }
   const logoutBtn = document.getElementById("logoutBtn");
