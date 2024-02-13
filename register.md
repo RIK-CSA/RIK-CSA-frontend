@@ -11,7 +11,7 @@ permalink: /interview/login/register/
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register User</title>
     <style>
-          h3{
+        h3{
             background-color: #fff;
         }
         body {
@@ -89,6 +89,10 @@ permalink: /interview/login/register/
         }
         #result-container div {
             margin-bottom: 20px;
+        }
+        #successMessage {
+        display: none;
+        font-size: 18px; /* Adjust the font size as needed */
         }
     </style>
 </head>
