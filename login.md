@@ -89,6 +89,10 @@ permalink: /interview/login/
         #result-container div {
             margin-bottom: 20px;
         }
+        #successMessage {
+        display: none;
+        font-size: 18px; /* Adjust the font size as needed */
+        }
     </style>
 </head>
 
