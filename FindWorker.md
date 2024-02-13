@@ -62,6 +62,7 @@ permalink: /FindEmployees/
         }
 
         #result {
+            background-color: #fff;
             margin-top: 20px;
         }
     </style>
