@@ -129,7 +129,7 @@ permalink: /interview/login/
             body: JSON.stringify(user)
         }).then(response => {
             if (!response.ok) {
-                alert('Login and / or password is incorrect');
+                alert('Login successful');
             } else {
                 return response.json();
             }
