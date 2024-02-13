@@ -140,7 +140,22 @@ permalink: /interview/login/
         }
         const loginForm = document.getElementById("loginForm");
         loginForm.addEventListener("submit", handleLogin);
+        function handleLogin(event) {
+    event.preventDefault();
+    // Get user input
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const user = {
+        email: email,
+        password: password
+    };
+    // Display success message
+    document.getElementById("successMessage").style.display = "block"; // Show success message
+    // Simulate redirection after 2 seconds
+    setTimeout(function(){
+        window.location.href = 'https://rik-csa.github.io/RIK-CSA-frontend/';
+    }, 2000);
+    }
     </script>
 </body>
-
 </html>
