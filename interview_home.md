@@ -41,10 +41,10 @@ layout: none
   function loadAndDisplayUsers() {
     // check if the user is connected
     const connectedUser = localStorage.getItem('connectedUser');
-    // if (!connectedUser) {
-    //     window.location = 'login/';
-    //     return;
-    // }
+    if (!connectedUser) {
+        window.location = 'login/';
+        return;
+    }
     const userListElement = document.getElementById("userList");
     // Clear any existing content in the userListElement
     userListElement.innerHTML = "Loading...";
@@ -75,22 +75,22 @@ layout: none
   }
   // Call the loadAndDisplayUsers function when the page loads
   window.addEventListener("load", loadAndDisplayUsers);
-  // function handleLogout() {
-  //     fetch('http://localhost:8020/api/v1/users/logout', {
-  //         method: 'POST',
-  //         headers: {
-  //             'Content-Type': 'application/json'
-  //         },
-  //         body: localStorage.getItem('connectedUser')
-  //     })
-  //         .then((response) => {
-  //             return response;
-  //         })
-  //         .then((data) => {
-  //             localStorage.removeItem('connectedUser');
-  //             window.location.href = "login/";
-  //         });
-  // }
+  function handleLogout() {
+      fetch('http://localhost:8020/api/v1/users/logout', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: localStorage.getItem('connectedUser')
+      })
+          .then((response) => {
+              return response;
+          })
+          .then((data) => {
+              localStorage.removeItem('connectedUser');
+              window.location.href = "login/";
+          });
+  }
   const logoutBtn = document.getElementById("logoutBtn");
   logoutBtn.addEventListener("click", handleLogout);
   function handleNewMeeting() {
