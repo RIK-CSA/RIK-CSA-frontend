@@ -149,6 +149,30 @@ permalink: /interview/login/register/
         // Attach the handleRegistration function to the form's submit event
         const registrationForm = document.getElementById("registrationForm");
         registrationForm.addEventListener("submit", handleRegistration);
+        function handleRegistration(event) {
+    event.preventDefault();
+    // Get user input
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const status = "online"; // Assuming the status is online upon registration
+    // Create an object with user information
+    const user = {
+        username: username,
+        email: email,
+        password: password,
+        status: status,
+    };
+    // Display success message
+    document.getElementById("successMessage").style.display = "block"; // Show success message
+    // Simulate redirection after 2 seconds
+    setTimeout(function(){
+        window.location.href = "https://rik-csa.github.io/RIK-CSA-frontend/";
+    }, 2000);
+    }
+    // Attach the handleRegistration function to the form's submit event
+    const registrationForm = document.getElementById("registrationForm");
+    registrationForm.addEventListener("submit", handleRegistration);
     </script>
 </body>
 
