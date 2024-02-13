@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+---
+title: Register
+layout: none
+permalink: /interview/login/register/
+---
+{%- include rik_head.html -%}
 <html lang="en">
 
 <head>
