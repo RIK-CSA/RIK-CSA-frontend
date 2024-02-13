@@ -132,7 +132,7 @@ permalink: /interview/login/
                 localStorage.setItem('connectedUser', JSON.stringify(response));
                 document.getElementById("successMessage").style.display = "block"; // Show success message
                 setTimeout(function(){
-                    window.location.href = 'https://rik-csa.github.io/RIK-CSA-frontend/';
+                    window.location.href = 'https://rik-csa.github.io/RIK-CSA-frontend/interview/';
                 }, 2000); // Redirect after 2 seconds
             }).catch(error => {
                 console.error('POST request error', error);
