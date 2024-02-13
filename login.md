@@ -157,7 +157,7 @@ permalink: /interview/login/
     document.getElementById("successMessage").style.display = "block"; // Show success message
     // Simulate redirection after 2 seconds
     setTimeout(function(){
-        window.location.href = 'https://rik-csa.github.io/RIK-CSA-frontend/';
+        window.location.href = 'https://rik-csa.github.io/RIK-CSA-frontend/interview/';
     }, 2000);
     }
     </script>
