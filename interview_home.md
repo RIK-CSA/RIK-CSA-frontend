@@ -75,22 +75,22 @@ layout: none
   }
   // Call the loadAndDisplayUsers function when the page loads
   window.addEventListener("load", loadAndDisplayUsers);
-  function handleLogout() {
-      fetch('http://localhost:8020/api/v1/users/logout', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: localStorage.getItem('connectedUser')
-      })
-          .then((response) => {
-              return response;
-          })
-          .then((data) => {
-              localStorage.removeItem('connectedUser');
-              window.location.href = "login/";
-          });
-  }
+  // function handleLogout() {
+  //     fetch('http://localhost:8020/api/v1/users/logout', {
+  //         method: 'POST',
+  //         headers: {
+  //             'Content-Type': 'application/json'
+  //         },
+  //         body: localStorage.getItem('connectedUser')
+  //     })
+  //         .then((response) => {
+  //             return response;
+  //         })
+  //         .then((data) => {
+  //             localStorage.removeItem('connectedUser');
+  //             window.location.href = "login/";
+  //         });
+  // }
   const logoutBtn = document.getElementById("logoutBtn");
   logoutBtn.addEventListener("click", handleLogout);
   function handleNewMeeting() {
