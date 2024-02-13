@@ -125,7 +125,7 @@ permalink: /interview/login/register/
                 password: password,
                 status: status,
             };
-            fetch('http://localhost:8020/api/v1/users', {
+            fetch('http://localhost:8020/api/v1/users/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
