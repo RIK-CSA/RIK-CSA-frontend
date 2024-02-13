@@ -41,10 +41,10 @@ layout: none
   function loadAndDisplayUsers() {
     // check if the user is connected
     const connectedUser = localStorage.getItem('connectedUser');
-    if (!connectedUser) {
-        window.location = 'login/';
-        return;
-    }
+    // if (!connectedUser) {
+    //     window.location = 'login/';
+    //     return;
+    // }
     const userListElement = document.getElementById("userList");
     // Clear any existing content in the userListElement
     userListElement.innerHTML = "Loading...";
