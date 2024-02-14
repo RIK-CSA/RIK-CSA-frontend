@@ -94,9 +94,12 @@ layout: none
   const logoutBtn = document.getElementById("logoutBtn");
   logoutBtn.addEventListener("click", handleLogout);
   function handleNewMeeting() {
-      const connectedUser = JSON.parse(localStorage.getItem('connectedUser'));
-      window.open(`videocall?username=${connectedUser.username}`, "_blank");
-  }
+    const connectedUser = JSON.parse(localStorage.getItem('connectedUser'));
+    console.log('Connected User:', connectedUser);
+    const url = `videocall?username=${connectedUser.username}`;
+    console.log('URL:', url);
+    window.open(url, "_blank");
+}
   // Attach the handleNewMeeting function to the "Create a New Meeting" button
   const newMeetingBtn = document.getElementById("newMeetingBtn");
   newMeetingBtn.addEventListener("click", handleNewMeeting);
