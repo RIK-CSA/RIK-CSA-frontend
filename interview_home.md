@@ -94,12 +94,18 @@ layout: none
   const logoutBtn = document.getElementById("logoutBtn");
   logoutBtn.addEventListener("click", handleLogout);
   function handleNewMeeting() {
-    const connectedUser = JSON.parse(localStorage.getItem('connectedUser'));
-    console.log('Connected User:', connectedUser);
-    const url = `videocall?username=${connectedUser.username}`;
-    console.log('URL:', url);
-    window.open(url, "_blank");
-}
+    const connectedUserData = localStorage.getItem('connectedUser');
+    if (!connectedUserData) {
+        console.error('No connected user data found in local storage.');
+        return;
+    }
+    try {
+        const connectedUser = JSON.parse(connectedUserData);
+        window.open(`videocall?username=${connectedUser.username}`, "_blank");
+    } catch (error) {
+        console.error('Error parsing connected user data:', error);
+    }
+  }
   // Attach the handleNewMeeting function to the "Create a New Meeting" button
   const newMeetingBtn = document.getElementById("newMeetingBtn");
   newMeetingBtn.addEventListener("click", handleNewMeeting);
