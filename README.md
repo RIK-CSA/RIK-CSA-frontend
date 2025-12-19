@@ -40,13 +40,3 @@ During the development of this system, I utilized **Generative AI (Gemini/ChatGP
 * **Accelerate Implementation:** Rapidly drafted complex fetch logic for seamless API integrations.
 * **Optimization:** Debugged and resolved CORS (Cross-Origin Resource Sharing) issues between the local frontend and the AWS-hosted Spring Boot backend.
 * **UI/UX Design:** Refined the interface for the job search form and result containers to ensure a clean, user-friendly experience.
-
-## 🏁 Getting Started
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/yourusername/worker-hiring-system.git](https://github.com/yourusername/worker-hiring-system.git)
-    ```
-2.  **Start the Backend:** Ensure your Spring Boot server is running on `http://localhost:8020`.
-3.  **Configure API Keys:** Replace the `X-RapidAPI-Key` in the job search script with your personal key from RapidAPI.
-4.  **Open Frontend:** Launch `PersonalizedSkills.html` or `FindEmployees.html` in your browser.
